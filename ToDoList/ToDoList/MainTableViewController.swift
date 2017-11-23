@@ -63,10 +63,12 @@ class MainTableViewController: UITableViewController {
         if let myDataTask = dataTask.main {
             //menampilkan data ke label
             cell.maintugas.text = myDataTask
-            cell.timetugas.text = myDataTask
-            cell.datetugas.text = myDataTask
-            cell.importanttugas.text = myDataTask
+        };if let mydatastask2 = dataTask.important{
+            cell.importanttugas.text = mydatastask2
+        };if let mydatatask3 = dataTask.tanggal {
+            cell.datetugas.text = mydatatask3
         }
+        
         
 
         return cell
@@ -137,7 +139,6 @@ class MainTableViewController: UITableViewController {
             //mengirimkan nama wisata
             kirimData.passtugas = mainselected
             kirimData.passpenting = importantselected
-            
             kirimData.passtanggal = dateselected
             kirimData.passwaktu = timeselected
             kirimData.passdesk = descselected
